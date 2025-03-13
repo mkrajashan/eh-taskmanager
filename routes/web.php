@@ -3,28 +3,6 @@
 use App\Http\Controllers\TaskController;
 use Illuminate\Support\Facades\Route;
 
-/*
-Route::get('/', function () {
-    return view('welcome');
-});
-*/
-
-/*
-
-Route::get("/", [TaskController::class, 'index']);
-Route::get("tasks/create", [TaskController::class, 'create']);
-Route::post("tasks/store", [TaskController::class, 'store']);
-
-Route::get("tasks/{id}", [TaskController::class, 'show']);
-Route::get("tasks/{id}/edit", [TaskController::class, 'edit']); // this is needed internally    
-
-Route::put("tasks/{id}/update", [TaskController::class, 'update']); // TO update the task
-
-Route::delete("tasks/{id}/delete", [TaskController::class, 'destroy']); // TO update the task
-
-*/
-
-
 Route::prefix('tasks')->group(function () {
     Route::get('/', [TaskController::class, 'index'])->name('tasks.index'); // List tasks
     Route::get('/create', [TaskController::class, 'create'])->name('tasks.create'); // Show create form
